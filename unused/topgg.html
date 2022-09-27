@@ -1,0 +1,922 @@
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+.markdown-body table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+  
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+  
+  thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+  
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+  
+  .markdown-body table th {
+    text-align: center;
+}
+  
+  .markdown-body table td, .markdown-body table th {
+    border: 1px solid #8795a1;
+    vertical-align: inherit;
+    padding: 2px 6px;
+}
+  
+  table td:not([align]), table th:not([align]) {
+    text-align: inherit;
+}
+  
+  table th {
+    color: #363636;
+}
+  
+  td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+  
+  .markdown-body strong {
+    color: #4a4a4a;
+}
+  
+  strong {
+    color: #363636;
+    font-weight: 700;
+}
+  
+  .markdown-body code {
+    background-color: inherit;
+    border: 1px solid #e06c75;
+    border-radius: 2px;
+    color: #e06c75;
+    font-weight: 700;
+    padding: 3px 4px;
+}
+  
+  code, hr {
+    background-color: #f5f5f5;
+}
+  
+  code {
+    color: #da1039;
+    font-size: .875em;
+    font-weight: 400;
+    padding: .25em .5em;
+}
+  
+  code, pre {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    font-family: monospace;
+}
+  
+  code {
+    font-family: monospace;
+}
+  
+.css-18r9pyf * {
+  overflow-wrap: anywhere;
+  white-space: inherit;
+}
+
+  .atag {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #94dbfb;
+    border-radius: 3px 0 0 3px;
+    color: #fff;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px 0 23px;
+    position: relative;
+    margin-bottom: 3px;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    margin-right: 14px !important;
+  }
+
+  .atag::after {
+    background: transparent !important;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #eee;
+    border-top: 13px solid transparent;
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    display: none;
+  }
+
+  .botpagebutton {
+    background: #ffca00;
+    font: 300 19px "Karla", sans-serif !important;
+    color: #f00;
+    display: block;
+    height: 26px;
+    line-height: 26px !important;
+    border-radius: 3px;
+    padding: 0 4px 0 7px;
+    vertical-align: middle !important;
+    text-decoration: none;
+    -webkit-transition: color 0.3s;
+  }
+
+  #bot-details-page .bot-img {
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .blog_card .thumbnail {
+    height: 0px !important;
+    width: 0px !important;
+    border-radius: 0px !important;
+    margin: 0px !important;
+    float: left !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  body {
+    background-image: url("https://cdn.discordapp.com/attachments/406099961730564107/632484401468407809/Website-Background.jpg");
+    /*filter: blur(8px);
+  -webkit-filter: blur(8px);*/
+    height: fit-content;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  img {
+    vertical-align: inherit;
+  }
+
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  img,
+  embed,
+  object,
+  audio,
+  video {
+    max-width: 100%;
+  }
+
+  .longdescription .content {
+    padding: 0px !important;
+    margin: 0px !important;
+    box-shadow: none;
+  }
+  .content {
+    background-color: transparent !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    border: none;
+    font: 24px/36px sans-serif;
+    width: device-width;
+    height: 1600px;
+    overflow: scroll;
+  }
+
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: lightblue;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #88ba1c;
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+
+  bg-text {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+  bg-text2 {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .mylinks {
+    text-align: center;
+  }
+  .mybutton-c {
+    background: #ffffff63;
+    color: #494949 !important;
+    text-transform: uppercase;
+    background: #ffffff08;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 2px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .mybutton-c:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+  }
+
+  main {
+    margin-top: 100px;
+  }
+  #thenav {
+    &:not(.top-nav-collapse) {
+      background: transparent;
+    }
+
+    .nav-item nav-link {
+      display: block;
+      color: white;
+      background-color: lightgray;
+
+      &:hover {
+        background-color: pink;
+        color: black;
+      }
+      &.active {
+        background-color: darkred;
+      }
+    }
+  }
+  .topnav {
+    background-color: #3330;
+    overflow: hidden;
+  }
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .clm {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .clm {
+      width: 100%;
+    }
+  }
+
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #4caf5000;
+    color: white;
+  }
+  h3,
+  p {
+    color: white;
+  }
+  #section1 {
+    background-color: transparent;
+  }
+  #section2 {
+    background-color: transparent;
+  }
+  #section3 {
+    background-color: transparent;
+  }
+</style>
+
+<div
+  class="thumbnail"
+  style="
+    background-image: url(https:\/\/images.discordapp.net/icons//.png?size=128);
+  "
+></div>
+<div
+  class="longdescription"
+  style="
+    background-image: url('https://cdn.discordapp.com/attachments/406099961730564107/632484401468407809/Website-Background.jpg');
+    padding: 0px;
+    width: auto;
+    height: auto;
+    background-size: cover;
+    top: 0px;
+    left: 0px;
+    border: 0px solid black;
+    background-position: top;
+    background-repeat: no-repeat;
+  "
+  class="midboxbg"
+/>
+
+<div class="topnav">
+  <a class="nav-link" href="#home">Home</a>
+  <a class="nav-link" href="#section1" data-offset="80">Start</a>
+  <a class="nav-link" href="#section2" data-offset="80">Commands</a>
+  <a class="nav-link" href="#section3">About</a>
+</div>
+
+<section id="section1">
+  <div class="start">
+    <h1
+      style="
+        font-size: 90px;
+        font-family: cursive;
+        -webkit-text-fill-color: #ffca00;
+        text-shadow: 4px 4px 9px black;
+        font-weight: bold;
+        top: 05%;
+        left: 50px;
+        text-align: center;
+      "
+    >
+      ICW BOT
+    </h1>
+    <br />
+    <p
+      style="
+        font-size: 35px;
+        text-shadow: 4px 4px 9px black;
+        top: 10%;
+        left: 40px;
+        text-align: center;
+        background: transparent;
+      "
+    >
+      for music, modration or fun
+    </p>
+    <img
+      src="https://cdn.discordapp.com/attachments/367982103415095296/373317631656329216/videotogif_2017.10.27_09.18.38.gif"
+      alt="icw"
+      style="width: 100%; height: 100%; padding: 5%"
+    />
+    <br />
+    <div class="mylinks">
+      <a
+        class="mybutton-c"
+        href="https://discordapp.com/oauth2/authorize?client_id=376292306233458688&permissions=8&scope=bot"
+        target="_blank"
+        rel="nofollow noopener"
+        >Invite</a
+      >
+      <a
+        class="mybutton-c"
+        href="https://discord.gg/zFDvBay"
+        target="_blank"
+        rel="nofollow noopener"
+        >Support</a
+      >
+      <a
+        class="mybutton-c"
+        href="https://icwbot.glitch.me"
+        target="_blank"
+        rel="nofollow noopener"
+        >Website</a
+      >
+    </div>
+
+    <div class="row" style="padding-top: 5%">
+      <div class="clm">
+        <img
+          src="https://cdn.discordapp.com/attachments/640098613665726464/640199450739867695/1572705808409.png"
+          alt="icw"
+          style="width: 100%; height: 100%; padding: 5%"
+        />
+      </div>
+      <div class="clm">
+        <h2
+          style="
+            color: #ffca00;
+            font-weight: bold;
+            text-shadow: 4px 4px 9px black;
+            top: 20%;
+            left: 30px;
+            background: transparent;
+            margin: 5%;
+            padding: 0;
+          "
+        >
+          Welcoming People's
+        </h2>
+        <p
+          style="
+            font-size: 20px;
+            text-shadow: 4px 4px 9px black;
+            top: 20%;
+            left: 30px;
+            background: transparent;
+            margin: 5%;
+            padding: 0;
+          "
+        >
+          there is so many random cool image
+          <br />
+          <br />and you can use custom image also
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section2">
+  <div class="command">
+    <p
+      style="
+        font-size: 25px;
+        text-shadow: 4px 4px 9px black;
+        top: 20%;
+        left: 30px;
+        background: transparent;
+        margin: 5%;
+        padding: 0;
+      "
+    >
+      Icw provide music volume control for all users
+      <br />
+      <br />default prefix is $ <br />just type $help
+      <br />
+
+      <table>
+<thead>
+<tr>
+<th><strong>Music -&gt;</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>play</td>
+<td>start playing music from yt</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>play some radio stations</td>
+</tr>
+<tr>
+<td>player</td>
+<td>control your music with button</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>pause the music player</td>
+</tr>
+<tr>
+<td>resume</td>
+<td>resume the music player</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>change the music player volume</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>skip the song</td>
+</tr>
+<tr>
+<td>prev</td>
+<td>play previews song</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>stop the music player</td>
+</tr>
+<tr>
+<td>queue</td>
+<td>check the music player playlist</td>
+</tr>
+<tr>
+<td>song</td>
+<td>check the current song</td>
+</tr>
+<tr>
+<td>random</td>
+<td>play randomly from queue</td>
+</tr>
+<tr>
+<td>join</td>
+<td>for join your voice-channel</td>
+</tr>
+<tr>
+<td>leave</td>
+<td>for leave your voice-channel</td>
+</tr>
+<tr>
+<td>autoremove</td>
+<td>remove previous song automatically</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>direct jump on a song on queue</td>
+</tr>
+<tr>
+<td>shuffle</td>
+<td>play auto random song from queue</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>repeat one song</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>for auto-join and auto-play song</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Welcome -&gt;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>welcome</td>
+<td>for check welcome panel</td>
+</tr>
+<tr>
+<td>welcome on/off</td>
+<td>for turn on or off welcoming</td>
+</tr>
+<tr>
+<td>welcome use-image</td>
+<td>turn on or off welcome images</td>
+</tr>
+<tr>
+<td>welcome use-jointext</td>
+<td>turn on or off welcome join-text</td>
+</tr>
+<tr>
+<td>welcome use-leavetext</td>
+<td>turn on or off user leave text</td>
+</tr>
+<tr>
+<td>welcome use-customimage</td>
+<td>turn on or off custom welcome image</td>
+</tr>
+<tr>
+<td>welcome use-userinfo</td>
+<td>turn on o off user-info</td>
+</tr>
+<tr>
+<td>welcome set-customimage</td>
+<td>set custom image for welcome</td>
+</tr>
+<tr>
+<td>welcome set-joinmessage</td>
+<td>set join message for welcome</td>
+</tr>
+<tr>
+<td>welcome set-leavemessage</td>
+<td>set leave message</td>
+</tr>
+<tr>
+<td>welcome set-channel</td>
+<td>set channel for welcome</td>
+</tr>
+<tr>
+<td>welcome jointest @pk#1650</td>
+<td>test the welcome</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Useful -&gt;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>get avatar your or other users</td>
+</tr>
+<tr>
+<td>afk</td>
+<td>set your offline status</td>
+</tr>
+<tr>
+<td>bug-report</td>
+<td>report about any bugs</td>
+</tr>
+<tr>
+<td>corona</td>
+<td>for getting corona(covid-19) updates</td>
+</tr>
+<tr>
+<td>suggestion</td>
+<td>send a suggestion</td>
+</tr>
+<tr>
+<td>feedback</td>
+<td>send a feedback</td>
+</tr>
+<tr>
+<td>calculator</td>
+<td>calculate your math question</td>
+</tr>
+<tr>
+<td>embedsay</td>
+<td>replace your message with embed style</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>check yours or any user permission</td>
+</tr>
+<tr>
+<td>say</td>
+<td>bot saying your message</td>
+</tr>
+<tr>
+<td>servericon</td>
+<td>icon of server</td>
+</tr>
+<tr>
+<td>serverinfo</td>
+<td>info about server</td>
+</tr>
+<tr>
+<td>userinfo</td>
+<td>info about a member</td>
+</tr>
+<tr>
+<td>weather</td>
+<td>check your city weather</td>
+</tr>
+<tr>
+<td>command</td>
+<td>description</td>
+</tr>
+<tr>
+<td>ping</td>
+<td>bot-ping test</td>
+</tr>
+<tr>
+<td>invite</td>
+<td>bot invite link</td>
+</tr>
+<tr>
+<td>stats</td>
+<td>about bot</td>
+</tr>
+<tr>
+<td>help</td>
+<td>help section</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>bot up-time</td>
+</tr>
+<tr>
+<td>translate</td>
+<td>translate any language</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Moderation -&gt;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>warn</td>
+<td>for warn the member</td>
+</tr>
+<tr>
+<td>kick</td>
+<td>for kick a member</td>
+</tr>
+<tr>
+<td>ban</td>
+<td>for ban a member</td>
+</tr>
+<tr>
+<td>hackban</td>
+<td>ban a user with user-id</td>
+</tr>
+<tr>
+<td>purge</td>
+<td>for delete multiple messages</td>
+</tr>
+<tr>
+<td>role</td>
+<td>add / remove roles and info about a role</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>check prefix with mention the bot</td>
+</tr>
+<tr>
+<td>mute</td>
+<td>mute a member</td>
+</tr>
+<tr>
+<td>unmute</td>
+<td>unmute a member</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Fun -&gt;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>8ball</td>
+<td>ask it a question</td>
+</tr>
+<tr>
+<td>emoji</td>
+<td>getting awesome emojis with search</td>
+</tr>
+<tr>
+<td>emojifi</td>
+<td>replace text into emoji</td>
+</tr>
+<tr>
+<td>hug</td>
+<td>hug anyone with mention</td>
+</tr>
+<tr>
+<td>minecraft</td>
+<td>craft something for fun with minecraft skins</td>
+</tr>
+<tr>
+<td>revers</td>
+<td>Write your text backwards</td>
+</tr>
+<tr>
+<td>slot</td>
+<td>Win money by betting, but remember, you can lose everything!</td>
+</tr>
+<tr>
+<td>yesorno</td>
+<td>Say yes or no with supergiffy</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Settings -&gt;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>autojoin</td>
+<td>automatic join your voice-channel</td>
+</tr>
+<tr>
+<td>autoleave</td>
+<td>automatic leave your voice-channel</td>
+</tr>
+<tr>
+<td>autorole</td>
+<td>automatic give role to new member</td>
+</tr>
+<tr>
+<td>defaultvolume</td>
+<td>set music player default volume</td>
+</tr>
+<tr>
+<td>easymode</td>
+<td>control music with reaction button on now-playing</td>
+</tr>
+<tr>
+<td>npmessage</td>
+<td>turn on/off or set  channel for now-playing message</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>set your server prefix</td>
+</tr>
+<tr>
+<td>settings</td>
+<td>view your server settings</td>
+</tr>
+<tr>
+<td>welcome</td>
+<td>welcome or goodbye to new members with custom style</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+      
+    </p>
+  </div>
+</section>
+
+<section id="section3">
+  <div class="About"></div>
+</section>
