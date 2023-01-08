@@ -29,7 +29,8 @@
     "solenolyrics": "^5.0.0",
     "yt-search": "^2.10.3",
     "ytdl-core": "^4.9.1",
-    "google-it": "^1.6.3"
+    "google-it": "^1.6.3",
+    "youtube-sr": "^4.3.4"
   },
   "devDependencies": {
     "jshint": "^2.9.5"
