@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const config = require("../config.js");
-const yts = require("yt-search");
+//const yts = require("yt-search");
 //const ytpl = require("ytpl");
 
 const { 
