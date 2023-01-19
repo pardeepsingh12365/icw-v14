@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config.js");
 //const ytdl = require("ytdl-core");
-const yts = require("yt-search");
+//const yts = require("yt-search");
 //const ytpl = require("ytpl");
 const nsfwword = require("../nsfwword");
 const { QueryType } = require('discord-player');
