@@ -15,7 +15,7 @@
   "dependencies": {
     "@discord-player/extractor": "^4.0.0",
     "@discordjs/rest": "^1.0.1",
-    "@discordjs/voice": "^0.8.0",
+    "@discordjs/voice": "^0.14.0",
     "@discordjs/opus": "^0.8.0",
     "@vitalets/google-translate-api": "^7.0.0",
     "canvas": "^2.9.3",
